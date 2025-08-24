@@ -1,5 +1,6 @@
 import datetime
 from django.db import models
+from usuarios.models import Usuarios
 
 class NegociacaoDoProduto(models.TextChoices):
     ABERTO = "ABERTO", "Aberto"
@@ -13,7 +14,7 @@ class Produtos(models.Model):
     negociacao_do_produto = models.CharField(
         choices=NegociacaoDoProduto.choices, default=NegociacaoDoProduto.ABERTO
     )
-    data_leilao = models.DateField()
+    data_leilao = models.DateTimeField(default=datetime.datetime.now)
     dono_do_produto = models.ForeignKey(
         Usuarios,
         on_delete=models.CASCADE,
