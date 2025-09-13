@@ -30,8 +30,9 @@ INSTALLED_APPS = [
     'produtos.apps.ProdutosConfig',
     'propostas.apps.PropostasConfig',
 
-    # rest_framework
+    # Pacotes de Terceiros
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
