@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from propostas.models import Propostas
+from propostas.serializers import PropostaSerializer
 
-# Create your views here.
+
+class PropostaViewSet(viewsets.ModelViewSet):
+    queryset = Propostas.objects.all()
+    serializer_class = PropostaSerializer
+    serializer = PropostaSerializer(queryset, many=True)
+    
