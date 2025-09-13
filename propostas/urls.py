@@ -3,4 +3,4 @@ from propostas.views import PropostaViewSet
 
 router_propostas = SimpleRouter()
 
-router_propostas.register(r'propostas/', PropostaViewSet, basename='propostas')
+router_propostas.register(r'propostas', PropostaViewSet, basename='propostas')
